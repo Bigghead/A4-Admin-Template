@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as c3 from 'c3';
+import Chart from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,12 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
-  months = ['']
+  @ViewChild('radar') radar: ElementRef;
+
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 
+            'July', 'August', 'September', 'October', 'November', 'December']
+
+  
 
   ngOnInit() {
 
@@ -46,6 +52,8 @@ export class DashboardComponent implements OnInit {
         }
       }
      } )
+
+     this.buildRadarChart();
   }
 
   getRandomNum( num: number ){
@@ -56,7 +64,7 @@ export class DashboardComponent implements OnInit {
   getDash1Column() :string[]{
 
     let day = new Date().getDate();
-    let arr = ['Visitors (June)'];
+    let arr = [`Visitors (${ this.months[ new Date().getMonth()] })`];
 
     for( let i = 0 ; i <= day; i ++ ){
       arr.push( this.getRandomNum( 100 ).toString() )
@@ -78,6 +86,34 @@ export class DashboardComponent implements OnInit {
     }
     
     return [ arr1, arr2 ];
+  }
+
+
+  buildRadarChart(){
+
+    let ctx = this.radar.nativeElement;
+    
+    let data = {
+      labels: ['Angular', 'React', 'Vue', 'Ember', 'Polymer', 'Preact'],
+      datasets: [ { 
+        backgroundColor: "rgba(200,0,0,0.2)",
+        data: [ 9, 9 , 8, 7, 6, 5]
+       } ]
+    }
+
+    const myChart = new Chart( ctx, {
+      type: 'radar',
+      data, 
+      options: {
+        scale: {
+          ticks: {
+            beginAtZero: true,
+            max: 10
+          }
+        }
+      }
+    } )
+
   }
   
 
