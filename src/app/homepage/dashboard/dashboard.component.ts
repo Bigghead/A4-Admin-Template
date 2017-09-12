@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   @ViewChild('radar') radar: ElementRef;
+  @ViewChild('line') line: ElementRef
 
   months = ['January', 'February', 'March', 'April', 'May', 'June', 
             'July', 'August', 'September', 'October', 'November', 'December']
@@ -54,6 +55,7 @@ export class DashboardComponent implements OnInit {
      } )
 
      this.buildRadarChart();
+     this.buildLineChart();
   }
 
   getRandomNum( num: number ){
@@ -95,10 +97,16 @@ export class DashboardComponent implements OnInit {
     
     let data = {
       labels: ['Angular', 'React', 'Vue', 'Ember', 'Polymer', 'Preact'],
-      datasets: [ { 
-        backgroundColor: "rgba(200,0,0,0.2)",
-        data: [ 9, 9 , 8, 7, 6, 5]
-       } ]
+      datasets: [ 
+        { 
+          label: 'Popularity',
+          backgroundColor: "rgba(228, 41, 228, .2)",
+          data: [ 9, 9 , 8, 7, 6, 5]
+        }, {
+          label: 'Ease of Use',
+          backgroundColor: "rgba(75, 225, 75, .2)",
+          data: [7, 8, 9, 7, 6, 9]
+        } ]
     }
 
     const myChart = new Chart( ctx, {
@@ -114,6 +122,51 @@ export class DashboardComponent implements OnInit {
       }
     } )
 
+  }
+
+
+  buildLineChart(){
+
+    // let ctx = this.line.nativeElement.getContext('2d');
+
+    // const lineChart = new Chart( ctx, {
+    //   type: 'bar', 
+    //    data: {
+    //   labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+    //   datasets: [
+    //     {
+    //       label: "Population (millions)",
+    //       backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    //       data: [2478,5267,734,784,433]
+    //     }
+    //   ]
+    // },
+    // options: {
+    //   legend: { display: false }, 
+    //   scaleFontSize:0,
+    //   scales: {
+    //     yAxes: [{
+    //       dsiplay: false,
+    //     }]
+    //   }
+    // }
+    // })
+    c3.generate({
+    bindto: '#linejs',
+    data: {
+        type: 'bar',
+        columns: [
+            [30, 200, 100, 400, 150, 250]
+        ]
+    },
+        axis: {
+            x: {show:false},
+            y: {show:false}
+        },
+        legend: {
+          show: false
+        }
+});
   }
   
 

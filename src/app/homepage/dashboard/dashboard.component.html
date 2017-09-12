@@ -1,24 +1,42 @@
 <div class="container">
-  <div class="row">
-    <div class="col s12">
-      <div class="card center-align">
+
+      <div class="card">
         <h5>Monthly Visitor Data</h5>
-        <div id="dash-chart-1"></div>        
-      </div>
+        <div id="dash-chart-1"></div>   
     </div>
-    <div class="col m5 s12">
-      <div class="card center-align">
+
+    <div style="display: flex;">
+      <div class="card" style="width: 40%; padding:10px; margin-right: 20px">
         <h5>Demographics</h5>
         <div id="dash-chart-2"></div>
       </div>
+        <div class="card" style="background-color: #a0dfcc; width: 60%; display: flex;">
+            <div style="width: 40%;">
+              <p>Gross Revenue</p>
+              <hr>
+              <p>Net Revenue</p>
+            </div>
+            <div style=" width: 60%;background-color: #55c9a6; border-top-right-radius: 2%; border-bottom-right-radius: 2%;">
+              <div id="linejs"></div>
+            </div>
+        </div>
     </div>
-    <!--<div class="col m7 s12">
-      <div class="card center-align">
-        <input type="date" class="datepicker">
+
+    
+    <div class="row">
+
+      <div class="col m4 s12">
+        <div class="card">
+          <canvas #radar height="250px"></canvas>
+        </div>
       </div>
-    </div>-->
-    <div class="col m7 s12">
-      <canvas #radar></canvas>
+
+      <div class="col m8 s12">
+        <div class="card">
+          <input type="date" class="datepicker">
+        </div>
+      </div>
+
     </div>
-  </div>
+   
 </div>
