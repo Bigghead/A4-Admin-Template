@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as c3 from 'c3';
 import Chart from 'chart.js';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   @ViewChild('radar') radar: ElementRef;
-  @ViewChild('line') line: ElementRef
+  @ViewChild('line') line: ElementRef;
 
   months = ['January', 'February', 'March', 'April', 'May', 'June', 
             'July', 'August', 'September', 'October', 'November', 'December']
@@ -25,10 +26,11 @@ export class DashboardComponent implements OnInit {
       bindto: '#dash-chart-1',
       data: {
         x: 'x',
-      columns: [
-        ['x', '2013-04-01', '2013-05-02', '2013-06-03', '2013-07-04', '2013-08-05', '2013-09-06'],
-        ['data1', 30, 200, 100, 400, 150, 250]
-        ]
+        columns: [
+          ['x', '2017-01-01', '2017-02-01', '2017-03-01', '2017-04-01', '2017-05-01', '2017-06-01', '2017-07-01', '2017-08-01', '2017-09-01'],
+          ['data1', 66, 289, 177, 424, 150, 251, 323, 577, 611]
+        ],
+        type: 'area'
       },
       axis: {
         x: {
@@ -71,6 +73,14 @@ export class DashboardComponent implements OnInit {
 
      this.buildRadarChart();
      this.buildLineChart();
+  }
+
+  ngAfterViewInit(){
+    setTimeout( () => {
+      let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
+      datePicker.style.zIndex = '0';
+    }, 500)
+   
   }
 
   getRandomNum( num: number ){

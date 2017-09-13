@@ -27,19 +27,24 @@
     </div>
 
     
-    <div class="row">
+    <div style="display: flex;">
 
-      <div class="col m4 s12">
-        <div class="card">
+      <!-- <div class="col m4 s12"> -->
+        <div class="card" style="width: 40%; padding:10px; margin-right: 20px">
           <canvas #radar height="250px"></canvas>
         </div>
-      </div>
+      <!-- </div> -->
 
-      <div class="col m8 s12">
-        <div class="card">
-          <input type="date" class="datepicker">
+      <!-- <div class="col m8 s12"> -->
+        <div class="card" style="width: 60%; display: flex;">
+          <div  style="width: 50%; justify-content: center" class="valign-wrapper"> 
+            <div data-toggle="datepicker" style="font-size: 16px; border: 2px solid grey"></div>
+          </div>
+          <div>
+            Weather
+          </div>
         </div>
-      </div>
+      <!-- </div> -->
 
     </div>
    

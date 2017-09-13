@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "@fengyuanchen/datepicker": "github:fengyuanchen/datepicker",
     "@types/c3": "^0.4.44",
     "c3": "^0.4.17",
     "chart.js": "^2.7.0",

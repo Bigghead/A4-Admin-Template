@@ -22,3 +22,8 @@
     color: white;
     opacity: .8;
 }
+
+.datepicker-container{
+    font-size: 16px;
+    margin: 10% auto;
+}
