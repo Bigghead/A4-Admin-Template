@@ -24,10 +24,23 @@ export class DashboardComponent implements OnInit {
     c3.generate( {
       bindto: '#dash-chart-1',
       data: {
-      columns: [
-        this.getDash1Column()
+        x: 'x',
+        columns: [
+            ['x', '2012-02-01','2013-04-01', '2014-05-02', '2015-06-03', '2016-07-04', '2017-08-05'],
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 130, 340, 200, 500, 250, 350]
         ]
-      }
+    },
+    axis: {
+        x: {
+            type: 'timeseries',
+            tick: {
+                format: function (x) {
+                    return new Date(x.toString()).getFullYear()
+                }
+            }
+        }
+    }
     } );
 
     c3.generate( { 
@@ -156,8 +169,11 @@ export class DashboardComponent implements OnInit {
     data: {
         type: 'bar',
         columns: [
-            [30, 200, 100, 400, 150, 250]
-        ]
+            ['data1', 30,50, 77, 120, 100, 65, 150, 120, 90, 77, 55]
+        ],
+        colors: {
+          data1: '#a0dfcc'
+        }
     },
         axis: {
             x: {show:false},

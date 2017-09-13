@@ -5,3 +5,20 @@
 .row{
     margin-top: 20px;
 }
+
+.revenue-container{
+    margin-top: 10%;
+    color: black;
+    opacity: .5;
+}
+
+.revenue-container > p{
+    margin: 12px 0;
+}
+
+.revenue-text{
+    margin: 5% 5% 0 5%;
+    font-size: 1.5rem;
+    color: white;
+    opacity: .8;
+}
