@@ -1,3 +1,4 @@
+import { DashHelper } from './homepage/dashboard/dashboard-helper';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
@@ -18,7 +19,7 @@ import { DashboardComponent } from './homepage/dashboard/dashboard.component';
     AppRoutingModule, 
     ChartsModule
   ],
-  providers: [],
+  providers: [ DashHelper ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
