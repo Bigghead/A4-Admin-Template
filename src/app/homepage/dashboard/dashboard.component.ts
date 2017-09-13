@@ -25,22 +25,24 @@ export class DashboardComponent implements OnInit {
       bindto: '#dash-chart-1',
       data: {
         x: 'x',
-        columns: [
-            ['x', '2012-02-01','2013-04-01', '2014-05-02', '2015-06-03', '2016-07-04', '2017-08-05'],
-            ['data1', 30, 200, 100, 400, 150, 250],
-            ['data2', 130, 340, 200, 500, 250, 350]
+      columns: [
+        ['x', '2013-04-01', '2013-05-02', '2013-06-03', '2013-07-04', '2013-08-05', '2013-09-06'],
+        ['data1', 30, 200, 100, 400, 150, 250]
         ]
-    },
-    axis: {
+      },
+      axis: {
         x: {
             type: 'timeseries',
             tick: {
                 format: function (x) {
-                    return new Date(x.toString()).getFullYear()
+                    // if((x.getMonth()+1) % 6 === 0) {
+                    //     return ('0' + (x.getMonth()+1)).slice(-2) + '/' + x.getFullYear().toString().substr(2,2);
+                    // }
+                    return   '0' + (new Date(x.toString()).getMonth() + 1) + '/' + new Date(x.toString()).getFullYear().toString().substr(2, 2);
                 }
             }
         }
-    }
+      }
     } );
 
     c3.generate( { 
