@@ -30,6 +30,8 @@ export class DashboardComponent implements OnInit {
     setTimeout( () => {
       let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
       datePicker.style.zIndex = '0';
+      datePicker.style.margin = '0 auto';      
+      // datePicker.className += " datepicker-small"
     }, 500)
    
   }

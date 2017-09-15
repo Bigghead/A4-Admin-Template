@@ -27,24 +27,33 @@
     </div>
 
     
-    <div style="display: flex;">
+    <div class="row">
 
-      <!-- <div class="col m4 s12"> -->
-        <div class="card" style="width: 40%; padding:10px; margin-right: 20px">
+       <div class="col m5 s12"> 
+        <div class="card" >
           <canvas #radar height="250px"></canvas>
+          <table>
+            <tbody>
+              <tr>
+                <td>Performance</td>
+                <td>42%</td>
+                <td>Graph</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      <!-- </div> -->
+       </div> 
 
-      <!-- <div class="col m8 s12"> -->
-        <div class="card" style="width: 60%; display: flex;">
-          <div  style="width: 50%; justify-content: center" class="valign-wrapper"> 
-            <div data-toggle="datepicker" style="font-size: 16px; border: 2px solid grey"></div>
-          </div>
-          <div>
+       <div class="col m7 s12"> 
+        <div class="card dash-weather row" >
+          <!--<div  > -->
+            <div data-toggle="datepicker" class="col m6 s12" style="margin: auto;"></div>
+          <!--</div>-->
+          <div class="col m6 s12">
             Weather
           </div>
         </div>
-      <!-- </div> -->
+       </div> 
 
     </div>
    
