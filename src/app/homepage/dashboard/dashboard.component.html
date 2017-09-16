@@ -47,10 +47,16 @@
        <div class="col m7 s12"> 
         <div class="card dash-weather row" >
           <!--<div  > -->
-            <div data-toggle="datepicker" class="col m6 s12" style="margin: auto;"></div>
+            <div data-toggle="datepicker" class="col m6 s12" style="margin: auto; background-color: white;"></div>
           <!--</div>-->
-          <div class="col m6 s12">
-            Weather
+          <div class="col m6 s12 weather-box" *ngIf="weatherData">
+            <!--<div><img src="{{ 'http://openweathermap.org/img/w/'+weatherData.weather[0].icon+'.png' }}" alt="weather" class="responsive-img" ></div>-->
+            <div><h5>{{ weatherData.weather[0].description }}</h5></div>
+            <div>
+              <span>Current: {{ tempChange(weatherData.main.temp) }}°F</span>
+            </div>
+            <hr>
+            <h5>Humidity: {{ weatherData.main.humidity }}</h5>
           </div>
         </div>
        </div> 

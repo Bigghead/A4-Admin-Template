@@ -73,7 +73,11 @@ export class DashHelper {
         c3.generate( { 
             bindto: '#dash-chart-2',
             data: {
-              columns : this.getDash2Column(), 
+              columns : [
+                //   this.getDash2Column(), 
+                ['Male', '56' , '44', '65' ],
+                ['Female', '44', '56' , '35']
+              ],
               // types: {
               //   'Male': 'bar',
               //   'Female': 'bar'
@@ -81,7 +85,11 @@ export class DashHelper {
               type: 'bar',
               groups: [ 
                 ['Male', 'Female']
-              ]
+              ],
+              colors: {
+                  Male: 'rgb(57, 147, 237)', 
+                  Female: 'rgb(242, 12, 127)'
+              }
             },
             axis: {
               x: {
@@ -105,11 +113,11 @@ export class DashHelper {
             datasets: [
                 {
                     label: 'Popularity',
-                    backgroundColor: "rgba(228, 41, 228, .2)",
+                    backgroundColor: "rgba(228, 41, 228, .5)",
                     data: [9, 9, 8, 7, 6, 5]
                 }, {
                     label: 'Ease of Use',
-                    backgroundColor: "rgba(75, 225, 75, .2)",
+                    backgroundColor: "rgba(75, 225, 75, .5)",
                     data: [7, 8, 9, 7, 6, 9]
                 }]
         }

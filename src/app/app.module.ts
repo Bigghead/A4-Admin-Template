@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { DashHelper } from './homepage/dashboard/dashboard-helper';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { DashboardComponent } from './homepage/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
   providers: [ DashHelper ],
   bootstrap: [AppComponent]
