@@ -6,6 +6,8 @@ import Chart from 'chart.js';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 
+declare const google: any;
+
 
 @Component({
   selector: 'app-dashboard',
@@ -30,6 +32,7 @@ export class DashboardComponent implements OnInit {
      this.dashHelper.buildRadarChart( this.radar );
      this.dashHelper.buildLineChart();
      this.getWeather();
+    //  this.getMap();
   }
 
 
@@ -53,11 +56,21 @@ export class DashboardComponent implements OnInit {
         .subscribe( res => {
           console.log( res );
           this.weatherData = res;
+          this.getMap();
         } )
   }
 
   tempChange( temp){
     return Math.round(temp * 9/5 - 459.67);
+  }
+
+  getMap(){
+     const mapProp = {
+            center: new google.maps.LatLng(this.weatherData.coord.lat, this.weatherData.coord.lon),
+            zoom: 5,
+            // mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+      const map = new google.maps.Map(document.getElementById("gMap"), mapProp);
   }
 
 }

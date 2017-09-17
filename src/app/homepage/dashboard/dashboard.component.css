@@ -2,6 +2,13 @@
     width: 90%;
 }
 
+.dash-demo-container{
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    /*flex-wrap: wrap;*/
+}
+
 .revenue-container{
     margin-top: 10%;
     color: black;
@@ -44,4 +51,12 @@
     justify-content: center;*/
     /*background-color: #D67F6B;*/
     color: white;
+}
+
+
+@media ( max-width: 600px ){
+
+    .dash-demo-container{
+        display: block;
+    }
 }
