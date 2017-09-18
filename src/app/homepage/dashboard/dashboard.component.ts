@@ -3,6 +3,7 @@ import { DashHelper } from './dashboard-helper';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as c3 from 'c3';
 import Chart from 'chart.js';
+import * as GMaps from 'gmaps';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 
@@ -65,12 +66,19 @@ export class DashboardComponent implements OnInit {
   }
 
   getMap(){
-     const mapProp = {
-            center: new google.maps.LatLng(this.weatherData.coord.lat, this.weatherData.coord.lon),
-            zoom: 5,
-            // mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-      const map = new google.maps.Map(document.getElementById("gMap"), mapProp);
+
+    // let map = document.getElementById('gMap');
+    //  const mapProp = {
+    //         center: new google.maps.LatLng(this.weatherData.coord.lat, this.weatherData.coord.lon),
+    //         zoom: 5,
+    //         // mapTypeId: google.maps.MapTypeId.ROADMAP
+    //     };
+    //   const map = new google.maps.Map(document.getElementById("gMap"), mapProp);
+    const map = new GMaps( {
+      el: '#gMap',
+      lat: this.weatherData.coord.lat,
+      lng: this.weatherData.coord.lon
+    } );
   }
 
 }
