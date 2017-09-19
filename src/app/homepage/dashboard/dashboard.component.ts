@@ -38,13 +38,21 @@ export class DashboardComponent implements OnInit {
 
 
   ngAfterViewInit(){
+
+    this.checkDatepicker();
+  }
+  
+
+  checkDatepicker(){
     setTimeout( () => {
+      
       let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
+      if( !datePicker ) { return this.checkDatepicker(); };
+
       datePicker.style.zIndex = '0';
       datePicker.style.margin = '0 auto';            
       // datePicker.className += " datepicker-small"
     }, 100)
-   
   }
 
 
