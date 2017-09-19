@@ -9,6 +9,10 @@
     /*flex-wrap: wrap;*/
 }
 
+.dash-demo-container > .card:first-child{
+    margin-right: 20px;
+}
+
 .revenue-container{
     margin-top: 10%;
     color: black;
@@ -57,6 +61,13 @@
 @media ( max-width: 600px ){
 
     .dash-demo-container{
-        display: block;
+        flex-wrap: wrap;
+    }
+
+    .dash-demo-container > .card:first-child{
+        margin-right: 0;
+    }
+    .dash-demo-container > .card{
+        flex-basis: 100%;
     }
 }
