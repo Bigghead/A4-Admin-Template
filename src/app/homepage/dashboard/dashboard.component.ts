@@ -38,11 +38,11 @@ export class DashboardComponent implements OnInit {
 
 
   ngAfterViewInit(){
+
     setTimeout( () => {
       let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
       datePicker.style.zIndex = '0';
       datePicker.style.margin = '0 auto';            
-      // datePicker.className += " datepicker-small"
     }, 100)
    
   }
@@ -60,20 +60,15 @@ export class DashboardComponent implements OnInit {
           this.getMap();
         } )
   }
+  
 
   tempChange( temp){
     return Math.round(temp * 9/5 - 459.67);
   }
 
+
   getMap(){
 
-    // let map = document.getElementById('gMap');
-    //  const mapProp = {
-    //         center: new google.maps.LatLng(this.weatherData.coord.lat, this.weatherData.coord.lon),
-    //         zoom: 5,
-    //         // mapTypeId: google.maps.MapTypeId.ROADMAP
-    //     };
-    //   const map = new google.maps.Map(document.getElementById("gMap"), mapProp);
     const map = new GMaps( {
       el: '#gMap',
       lat: this.weatherData.coord.lat,

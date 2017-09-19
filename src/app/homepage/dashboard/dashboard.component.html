@@ -6,7 +6,7 @@
     </div>
 
     <div class="dash-demo-container" style="display: flex;">
-      <div class="card" style="width: 40%; padding:10px; margin-right: 20px">
+      <div class="card" style="width: 40%; padding:10px">
         <h5>Demographics</h5>
         <div id="dash-chart-2"></div>
       </div>
@@ -19,8 +19,10 @@
               <h4>8900</h4>
             </div>
             <div style=" width: 60%;background-color: #55c9a6; border-top-right-radius: 2%; border-bottom-right-radius: 2%;">
-              <span style="float: left;" class="revenue-text">Daily Load</span>
-              <span style="float: right;" class="revenue-text">77%</span>              
+              <div style="display: flex; justify-content: space-between">
+              <span  class="revenue-text">Daily Load</span>
+              <span  class="revenue-text">77%</span> 
+              </div>             
               <div id="linejs"></div>
             </div>
         </div>
@@ -36,7 +38,17 @@
             <tbody>
               <tr>
                 <td>Performance</td>
-                <td>42%</td>
+                <td>+42%</td>
+                <td>Graph</td>
+              </tr>
+              <tr>
+                <td>Transactions</td>
+                <td>27000(+43%)</td>
+                <td>Graph</td>
+              </tr>
+              <tr>
+                <td>Conversions</td>
+                <td>2800(+15%)</td>
                 <td>Graph</td>
               </tr>
             </tbody>
@@ -51,12 +63,12 @@
           <!--</div>-->
           <div class="col m6 s12 weather-box" *ngIf="weatherData">
             <!--<div><img src="{{ 'http://openweathermap.org/img/w/'+weatherData.weather[0].icon+'.png' }}" alt="weather" class="responsive-img" ></div>-->
-            <div><h5>{{ weatherData.weather[0].description }}</h5></div>
+            <div><h4>{{ weatherData.weather[0].main }}</h4></div>
             <div>
-              <span>Current: {{ tempChange(weatherData.main.temp) }}°F</span>
+              <h5>Current: {{ tempChange(weatherData.main.temp) }}°F</h5>
             </div>
             <hr>
-            <h5>Humidity: {{ weatherData.main.humidity }}</h5>
+            <span>Humidity: {{ weatherData.main.humidity }}%</span>
           </div>
         </div>
        </div> 
