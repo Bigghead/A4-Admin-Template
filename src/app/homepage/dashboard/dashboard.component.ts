@@ -39,22 +39,7 @@ export class DashboardComponent implements OnInit {
 
   ngAfterViewInit(){
 
-<<<<<<< HEAD
     this.checkDatepicker();
-  }
-  
-
-  checkDatepicker(){
-=======
->>>>>>> 317481a961f138383fe981a3ee266b0c13d4850c
-    setTimeout( () => {
-      
-      let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
-      if( !datePicker ) { return this.checkDatepicker(); };
-
-      datePicker.style.zIndex = '0';
-      datePicker.style.margin = '0 auto';            
-    }, 100)
   }
 
 
@@ -84,6 +69,18 @@ export class DashboardComponent implements OnInit {
       lat: this.weatherData.coord.lat,
       lng: this.weatherData.coord.lon
     } );
+  }
+
+  checkDatepicker(){
+
+    setTimeout( () => {
+      
+      let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
+      if( !datePicker ) { return this.checkDatepicker(); };
+
+      datePicker.style.zIndex = '0';
+      datePicker.style.margin = '0 auto';            
+    }, 100)
   }
 
 }
