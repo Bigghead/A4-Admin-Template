@@ -13,6 +13,26 @@
     margin-right: 20px;
 }
 
+.dash-bar-container{
+    display: flex;
+    width: 40%;
+}
+
+.dash-bar-first{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: #ea8564;
+    border-top-left-radius: 3%;
+    border-bottom-left-radius: 3%;
+}
+
+.dash-bar-first > div{
+    margin: 15px;
+}
+
 .revenue-container{
     margin-top: 10%;
     color: black;
@@ -63,7 +83,6 @@
     .dash-demo-container{
         flex-wrap: wrap;
     }
-
     .dash-demo-container > .card:first-child{
         margin-right: 0;
     }

@@ -5,13 +5,24 @@
         <div id="dash-chart-1"></div>   
     </div>
 
-    <div class="dash-demo-container" style="display: flex;">
-      <div class="card" style="width: 40%; padding:10px">
-        <h5>Demographics</h5>
-        <div id="dash-chart-2"></div>
+    <div class="dash-demo-container">
+      <div class="card dash-bar-container">
+        <div class="dash-bar-first">
+          <div><i class="fa fa-bar-chart fa-lg" aria-hidden="true" (click)="dashDemo = 'chart'"style="cursor: pointer;"></i></div>
+          <div><i class="fa fa-tasks fa-lg" aria-hidden="true" (click)="dashDemo = 'tasks'"style="cursor: pointer;"></i></div>          
+        </div>
+        <div style="width: 80%;">
+          <div [hidden]="dashDemo !== 'chart'">
+            <h5>Demographics</h5>
+            <div id="dash-chart-2"></div>
+          </div>
+          <div [hidden]="dashDemo !== 'tasks'">
+
+          </div>
+        </div>
       </div>
         <div class="card" style="background-color: #a0dfcc; width: 60%; display: flex;">
-            <div style="width: 40%;" class="revenue-container">
+            <div style="width: 40%;" class="revenue-container" >
               <h5>Gross Revenue</h5>
               <h4>9664</h4>
               <hr>
@@ -38,17 +49,17 @@
             <tbody>
               <tr>
                 <td>Performance</td>
-                <td>+42%</td>
+                <td><span class="new badge blue lighten-2" data-badge-caption="">+42%</span></td>
                 <td>Graph</td>
               </tr>
               <tr>
                 <td>Transactions</td>
-                <td>27000(+43%)</td>
+                <td><span class="new badge red lighten-1" data-badge-caption="">27000(+43%)%</span></td>
                 <td>Graph</td>
               </tr>
               <tr>
                 <td>Conversions</td>
-                <td>2800(+15%)</td>
+                <td><span class="new badge green lighten-1" data-badge-caption="">2800(+15%)%</span></td>
                 <td>Graph</td>
               </tr>
             </tbody>

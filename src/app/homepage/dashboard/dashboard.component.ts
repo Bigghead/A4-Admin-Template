@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild('line') line: ElementRef;
 
   weatherData;
+  dashDemo: string = 'chart';
   
 
   ngOnInit() {
@@ -39,12 +40,7 @@ export class DashboardComponent implements OnInit {
 
   ngAfterViewInit(){
 
-    setTimeout( () => {
-      let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
-      datePicker.style.zIndex = '0';
-      datePicker.style.margin = '0 auto';            
-    }, 100)
-   
+   this.dateLayout();
   }
 
 
@@ -60,7 +56,7 @@ export class DashboardComponent implements OnInit {
           this.getMap();
         } )
   }
-  
+
 
   tempChange( temp){
     return Math.round(temp * 9/5 - 459.67);
@@ -74,6 +70,18 @@ export class DashboardComponent implements OnInit {
       lat: this.weatherData.coord.lat,
       lng: this.weatherData.coord.lon
     } );
+  }
+
+  dateLayout(){
+     setTimeout( () => {
+      let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
+      if( datePicker ){
+         datePicker.style.zIndex = '0';
+         datePicker.style.margin = '0 auto'; 
+      } else {
+        return this.dateLayout();
+      }       
+    }, 100)
   }
 
 }
