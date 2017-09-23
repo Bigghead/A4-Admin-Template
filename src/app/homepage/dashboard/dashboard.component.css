@@ -33,15 +33,31 @@
     margin: 15px;
 }
 
-.revenue-container{
+.card-revenue{
+    background-color: #a0dfcc; 
+    width: 60%; 
+    display: flex;
+}
+
+.dash-revenue-container{
+    width: 40%;
     margin-top: 10%;
     color: black;
     opacity: .5;
 }
 
-.revenue-container > p{
-    margin: 12px 0;
+.dash-revenue-right{
+    width: 60%;
+    background-color: #55c9a6; 
+    border-top-right-radius: 2%; 
+    border-bottom-right-radius: 2%;
 }
+
+/*.dash-revenue-container > p{
+    margin: 12px 0;
+}*/
+
+
 
 .revenue-text{
     margin: 5% 5% 0 5%;
