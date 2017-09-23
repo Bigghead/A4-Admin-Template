@@ -12,7 +12,7 @@
           <div><i class="fa fa-tasks fa-lg" aria-hidden="true" (click)="dashDemo = 'tasks'"style="cursor: pointer;"></i></div>          
         </div>
         <div style="width: 80%;">
-          <div [hidden]="dashDemo !== 'chart'">
+          <div class="fade" [ngClass]="{'active': dashDemo === 'chart'}">
             <h5>Demographics</h5>
             <div id="dash-chart-2"></div>
           </div>

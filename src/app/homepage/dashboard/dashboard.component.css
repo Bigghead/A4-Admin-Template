@@ -18,6 +18,16 @@
     width: 40%;
 }
 
+.fade{
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+}
+
+.fade.active{
+    opacity: 1;
+}
+
 .dash-bar-first{
     display: flex;
     flex-direction: column;

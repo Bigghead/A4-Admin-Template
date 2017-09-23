@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 
   ngAfterViewInit(){
 
-   this.dateLayout();
+    this.checkDatepicker();
   }
 
 
@@ -72,15 +72,15 @@ export class DashboardComponent implements OnInit {
     } );
   }
 
-  dateLayout(){
-     setTimeout( () => {
+  checkDatepicker(){
+
+    setTimeout( () => {
+      
       let datePicker = <HTMLElement> document.querySelector('.datepicker-container');
-      if( datePicker ){
-         datePicker.style.zIndex = '0';
-         datePicker.style.margin = '0 auto'; 
-      } else {
-        return this.dateLayout();
-      }       
+      if( !datePicker ) { return this.checkDatepicker(); };
+
+      datePicker.style.zIndex = '0';
+      datePicker.style.margin = '0 auto';            
     }, 100)
   }
 
