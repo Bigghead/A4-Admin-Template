@@ -25,6 +25,13 @@ export class DashboardComponent implements OnInit {
 
   weatherData;
   dashDemo: string = 'chart';
+  socialLogin = [
+    { name: 'Twitter', class: 'fa fa-twitter fa-lg', checked: true },
+    { name: 'Facebook', class: 'fa fa-facebook fa-lg', checked: false },
+    { name: 'Google+', class: 'fa fa-google-plus fa-lg', checked: true },
+    { name: 'LinkedIn', class: 'fa fa-linkedin fa-lg', checked: true },
+    { name: 'Instagram', class: 'fa fa-instagram fa-lg', checked: false }
+  ]
   
 
   ngOnInit() {

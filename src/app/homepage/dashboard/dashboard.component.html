@@ -16,6 +16,25 @@
             <h5>Demographics</h5>
             <div id="dash-chart-2"></div>
           </div>
+
+          <div class="fade" [ngClass]="{'active': dashDemo === 'tasks'}">
+            <table class="striped">
+              <tbody>
+                <tr *ngFor="let social of socialLogin; let i = index;">
+                  <td style="width: 40px; text-align: left;"><i [ngClass]="social.class"></i></td>
+                  <td style="text-align: left;">{{ social.name }}</td>
+                  <td style="text-align: right;">
+                    <div class="switch">
+                      <label>
+                        <input type="checkbox" [checked]="social.checked ">
+                        <span class="lever"></span>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div [hidden]="dashDemo !== 'tasks'">
 
           </div>
@@ -84,9 +103,6 @@
         </div>
        </div> 
 
-       <div class="col m5 s12">
-
-       </div>
 
        <div class="col m7 s12">
          <div class="card">
@@ -95,6 +111,19 @@
               <agm-marker [latitude]="weatherData.coord.lat" [longitude]="weatherData.coord.lon"></agm-marker>
             </agm-map>-->
          </div>
+       </div>
+       <div class="col m5 s12">
+        <div class="card dash-card-vim">
+          <div class="dash-card-vim-1">
+            <div><i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i></div>
+            <div><i class="fa fa-list fa-lg" aria-hidden="true"></i></div>
+            <div><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></div>            
+          </div>
+
+          <div class="dash-card-vim-2">
+            <h1>Hello</h1>
+          </div>
+        </div>
        </div>
 
     </div>

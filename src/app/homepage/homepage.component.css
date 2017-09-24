@@ -20,6 +20,7 @@ nav ul li a:hover {
     background-size: contain;
     background-position: 50%;
     background-repeat: no-repeat;
+    vertical-align: middle;
 }
 
 .flag-icon-us{

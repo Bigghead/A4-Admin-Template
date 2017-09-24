@@ -20,12 +20,14 @@
 
 .fade{
     opacity: 0;
-    -webkit-transition: opacity .3s linear;
-    transition: opacity .3s linear;
+    display: none;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
 }
 
 .fade.active{
     opacity: 1;
+    display: block;
 }
 
 .dash-bar-first{
@@ -101,6 +103,28 @@
     justify-content: center;*/
     /*background-color: #D67F6B;*/
     color: white;
+}
+
+.dash-card-vim{
+    /*display: flex;
+    flex-direction: column;*/
+}
+
+.dash-card-vim-1{
+    height: 15%;
+    background-color: #debc85;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dash-card-vim-1 > div > i{
+    cursor: pointer;
+}
+
+.dash-card-vim-2{
+    height: 85%;
+    
 }
 
 
