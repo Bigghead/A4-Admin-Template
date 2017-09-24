@@ -6,39 +6,6 @@ export class DashHelper {
     months = ['January', 'February', 'March', 'April', 'May', 'June', 
               'July', 'August', 'September', 'October', 'November', 'December']
 
-    getRandomNum( num: number ){
-        return Math.floor( Math.random() * num ) + 1;
-      }
-
-    
-    getDash1Column() :string[]{
-        
-        let day = new Date().getDate();
-        let arr = [`Visitors (${ this.months[ new Date().getMonth()] })`];
-        
-        for( let i = 0 ; i <= day; i ++ ){
-            arr.push( this.getRandomNum( 100 ).toString() )
-        }
-        return arr;
-    }
-
-
-    getDash2Column() {
-
-        let arr1 = ['Male'];
-        let arr2 = ['Female'];
-
-        for (let i = 0; i < 3; i++) {
-
-            let num = 100;
-            let malePercentage = this.getRandomNum(100);
-            arr1.push(malePercentage.toString());
-            arr2.push((num - malePercentage).toString());
-        }
-
-        return [arr1, arr2];
-    }
-
 
     drawChart1(){
         c3.generate( {
@@ -74,14 +41,9 @@ export class DashHelper {
             bindto: '#dash-chart-2',
             data: {
               columns : [
-                //   this.getDash2Column(), 
                 ['Male', '56' , '44', '65' ],
                 ['Female', '44', '56' , '35']
               ],
-              // types: {
-              //   'Male': 'bar',
-              //   'Female': 'bar'
-              // }
               type: 'bar',
               groups: [ 
                 ['Male', 'Female']
@@ -166,14 +128,9 @@ export class DashHelper {
             bindto: '#barjs',
             data: {
               columns : [
-                //   this.getDash2Column(), 
                 ['Atom', '56' , '44', '25', '17', '30', '20', '19'],
                 ['VSCode', '10', '30' , '25', '32', '42', '28', '70']
               ],
-              // types: {
-              //   'Male': 'bar',
-              //   'Female': 'bar'
-              // }
               type: 'bar',
               groups: [ 
                 ['Atom', 'VSCode']
