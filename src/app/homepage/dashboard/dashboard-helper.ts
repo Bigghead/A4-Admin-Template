@@ -140,7 +140,7 @@ export class DashHelper {
 
     buildLineChart() {
 
-        c3.generate({
+        c3.generate( {
             bindto: '#linejs',
             data: {
                 type: 'bar',
@@ -158,6 +158,41 @@ export class DashHelper {
             legend: {
                 show: false
             }
-        });
+        } );
+    }
+
+    buildBarChart(){
+       c3.generate( { 
+            bindto: '#barjs',
+            data: {
+              columns : [
+                //   this.getDash2Column(), 
+                ['Atom', '56' , '44', '25', '17', '30', '20', '19'],
+                ['VSCode', '10', '30' , '25', '32', '42', '28', '70']
+              ],
+              // types: {
+              //   'Male': 'bar',
+              //   'Female': 'bar'
+              // }
+              type: 'bar',
+              groups: [ 
+                ['Atom', 'VSCode']
+              ],
+              colors: {
+                  Atom: '#D67F6B',
+                  VSCode: '#debc85' 
+              }
+            },
+            axis: {
+              x: {
+                type: 'category', 
+                categories: [ '0', '1', '2', '3', '4', '5'],
+                show: false
+              }, 
+              y: {
+                max: 90
+              }
+            }
+           } )
     }
 }

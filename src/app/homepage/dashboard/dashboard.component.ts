@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
 
   weatherData;
   dashDemo: string = 'chart';
+  dashChartDemo: string = 'chart';
   socialLogin = [
     { name: 'Twitter', class: 'fa fa-twitter fa-lg', checked: true },
     { name: 'Facebook', class: 'fa fa-facebook fa-lg', checked: false },
@@ -40,6 +41,7 @@ export class DashboardComponent implements OnInit {
      this.dashHelper.drawChart2();
      this.dashHelper.buildRadarChart( this.radar );
      this.dashHelper.buildLineChart();
+     this.dashHelper.buildBarChart();
      this.getWeather();
     //  this.getMap();
   }

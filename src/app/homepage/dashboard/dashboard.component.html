@@ -59,11 +59,11 @@
     </div>
 
     
-    <div class="row">
+    <div class="dash-flex-container">
 
-       <div class="col m5 s12"> 
+       <div class="dash-flex-1"> 
         <div class="card" >
-          <canvas #radar height="250px"></canvas>
+          <canvas #radar height="200px"></canvas>
           <table>
             <tbody>
               <tr>
@@ -84,9 +84,59 @@
             </tbody>
           </table>
         </div>
+
+        <div class="card dash-card-vim">
+          <div class="dash-card-vim-1">
+            <div [ngClass]="{'active': dashChartDemo === 'chart'}"><i class="fa fa-bar-chart fa-lg" 
+                    aria-hidden="true"
+                    (click)="dashChartDemo = 'chart'"></i></div>
+            <div [ngClass]="{'active': dashChartDemo === 'list'}"><i class="fa fa-list fa-lg" 
+                    aria-hidden="true"
+                    (click)="dashChartDemo = 'list'"></i></div>
+            <div [ngClass]="{'active': dashChartDemo === 'clock'}"><i class="fa fa-clock-o fa-lg" 
+                    aria-hidden="true"
+                    (click)="dashChartDemo = 'clock'"></i></div>            
+          </div>
+
+          <div class="dash-card-vim-2">
+            <div class="fade" [ngClass]="{'active': dashChartDemo === 'chart'}">
+              <h6 class="center-align" style="color: #debc85; font-weight: 700;">Atom vs VSCode</h6>
+              <p class="center-align" style="color: #D67F6B; font-weight: 700; font-size: 14.5px;">Weekly Usage Data</p>
+              <div id="barjs"></div>
+              <table>
+                <tbody style="color: white; background-color: #debc85">
+                  <tr style="border-bottom: 1px solid white;">
+                    <td>
+                      <h6>Total Downloads</h6>
+                      <h6>1909</h6>
+                    </td>
+                    <td>graph</td>
+                    <td>+42%</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid white;">
+                    <td>
+                      <h6>Total Downloads</h6>
+                      <h6>3697</h6>
+                    </td>
+                    <td>graph</td>
+                    <td>+79%</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h6>Total Downloads</h6>
+                      <h6>742</h6>
+                    </td>
+                    <td>graph</td>
+                    <td>-27%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
        </div> 
 
-       <div class="col m7 s12"> 
+       <div class="dash-flex-2"> 
         <div class="card dash-weather row" >
           <!--<div  > -->
             <div data-toggle="datepicker" class="col m6 s12" style="margin: auto; background-color: white;"></div>
@@ -101,30 +151,18 @@
             <span>Humidity: {{ weatherData.main.humidity }}%</span>
           </div>
         </div>
-       </div> 
 
-
-       <div class="col m7 s12">
          <div class="card">
             <div id="gMap" style="width: 90%;height:350px; margin: auto;"></div>           
             <!--<agm-map [latitude]="weatherData.coord.lat" [longitude]="weatherData.coord.lon" style="height: 350px; margin: auto;">
               <agm-marker [latitude]="weatherData.coord.lat" [longitude]="weatherData.coord.lon"></agm-marker>
             </agm-map>-->
          </div>
-       </div>
-       <div class="col m5 s12">
-        <div class="card dash-card-vim">
-          <div class="dash-card-vim-1">
-            <div><i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i></div>
-            <div><i class="fa fa-list fa-lg" aria-hidden="true"></i></div>
-            <div><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></div>            
-          </div>
+       </div> 
 
-          <div class="dash-card-vim-2">
-            <h1>Hello</h1>
-          </div>
-        </div>
-       </div>
+
+        
+       
 
     </div>
    
