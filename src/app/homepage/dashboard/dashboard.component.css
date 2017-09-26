@@ -160,7 +160,20 @@
 
 .dash-card-vim-2{
     height: 85%;
-    
+}
+
+.dash-form{
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.dash-input{
+    display: flex;
+    align-items: center;
+}
+
+.dash-input > input{
+    margin-bottom: 0;
 }
 
 
