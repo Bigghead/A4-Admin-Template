@@ -7,6 +7,11 @@ export class DashHelper {
               'July', 'August', 'September', 'October', 'November', 'December']
 
 
+
+    randomNumber() {
+      return Math.floor(Math.random() * 256);
+    }
+
     drawChart1(){
         c3.generate( {
             bindto: '#dash-chart-1',
@@ -97,6 +102,42 @@ export class DashHelper {
             }
         })
 
+    }
+
+    
+    buildDonut( el ){
+
+        let newArr = [];
+        for ( let i = 0 ; i <= 5; i ++ ){
+            newArr.push(`rgba(${this.randomNumber()}, ${this.randomNumber()}, ${this.randomNumber()}, 0.8)`)
+        }
+        
+        const myChart = new Chart(el.nativeElement, {
+            type: 'doughnut',
+            data: {
+                datasets: [ {
+                    data: [57, 24, 33, 11, 67],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56",
+                        '#00d9f9', 
+                        '#a4c73c'
+                    ]
+                } ],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: [
+                    'Karl',
+                    'Layla',
+                    'Max',
+                    'Dodo',
+                    'Kero'
+                ]
+                
+            }
+
+        } )
     }
 
 

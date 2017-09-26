@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild('radar') radar: ElementRef;
   @ViewChild('line') line: ElementRef;
+  @ViewChild('donutChart') donutChart: ElementRef;
 
   weatherData;
   dashDemo: string = 'chart';
@@ -32,6 +33,22 @@ export class DashboardComponent implements OnInit {
     { name: 'Google+', class: 'fa fa-google-plus fa-lg', checked: true },
     { name: 'LinkedIn', class: 'fa fa-linkedin fa-lg', checked: true },
     { name: 'Instagram', class: 'fa fa-instagram fa-lg', checked: false }
+  ];
+  friendList = [
+    { name : 'Hello 1', invited: true },
+    { name : 'Hello 2', invited: false },
+    { name : 'Hello 3', invited: false },
+    { name : 'Hello 4', invited: false },
+    { name : 'Hello 5', invited: true },
+    { name : 'Hello 6', invited: false }
+  ];
+  allChecked: boolean = false;
+  clearList = [
+    { color: "#FF6384", number: 57 },
+    { color: "#36A2EB", number: 24 },
+    { color: "#FFCE56", number: 33 },
+    { color: '#00d9f9', number: 11 }, 
+    { color: '#a4c73c', number: 67 }
   ]
   
 
@@ -42,6 +59,7 @@ export class DashboardComponent implements OnInit {
      this.dashHelper.buildRadarChart( this.radar );
      this.dashHelper.buildLineChart();
      this.dashHelper.buildBarChart();
+     this.dashHelper.buildDonut( this.donutChart );
      this.getWeather();
     //  this.getMap();
   }
@@ -91,6 +109,19 @@ export class DashboardComponent implements OnInit {
       datePicker.style.zIndex = '0';
       datePicker.style.margin = '0 auto';            
     }, 100)
+  }
+
+
+  changeInvite( index: number ){
+    this.friendList[index].invited = !this.friendList[index].invited
+  }
+
+  toggleAll(){
+    if( this.allChecked ){
+      this.friendList.forEach( fr => fr.invited = true )
+    } else {
+      this.friendList.forEach( fr => fr.invited = false )
+    }
   }
 
 }

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,8 @@ import { DashHelper } from './homepage/dashboard/dashboard-helper';
     BrowserModule,
     AppRoutingModule, 
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ DashHelper ],
   bootstrap: [AppComponent]

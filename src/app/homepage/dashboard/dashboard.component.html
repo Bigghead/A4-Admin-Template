@@ -140,9 +140,25 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
                 <p style="">
-                    <input type="checkbox" id="checkboxid"><label for="checkboxid">Invite Everybody</label>
+                    <input type="checkbox" id="checkboxid" [(ngModel)]="allChecked" (click)="toggleAll()"><label for="checkboxid">Invite Everybody</label>
                   </p> 
               </div>
+              <table class="striped">
+                <tbody>
+                  <tr *ngFor="let friend of friendList; let i = index;">
+                    <td><i class="fa fa-user" aria-hidden="true"></i></td>
+                    <td>{{ friend.name }}</td>
+                    <td style="text-align: right; padding-right: 15px; "><a class="waves-effect waves-light btn" [ngClass]="{ red : friend.invited}"
+                           (click)="changeInvite(i)">
+                      {{ friend.invited ? 'Invited' : 'Invite'}}</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="fade" [ngClass]="{'active': dashChartDemo === 'clock'}">
+              <canvas #donutChart height="200px;"></canvas>
             </div>
           </div>
         </div>
