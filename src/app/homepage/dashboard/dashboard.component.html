@@ -159,6 +159,18 @@
 
             <div class="fade" [ngClass]="{'active': dashChartDemo === 'clock'}">
               <canvas #donutChart height="200px;"></canvas>
+              <table>
+                <tbody>
+                  <tr *ngFor="let item of clearList">
+                    <td style="width: 85%;">
+                        <div class="progress" style="height: 18px; border-radius: 5px; background-color: lightgray;">
+                            <div class="determinate" [style.width.%]="item.number" style="color: white;" [ngStyle]="{ 'background-color': item.color}">{{ item.name }}</div>
+                        </div>
+                    </td>
+                    <td><span class="progress-count">{{ item.number }}</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

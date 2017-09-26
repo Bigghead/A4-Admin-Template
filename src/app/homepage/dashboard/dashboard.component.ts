@@ -44,11 +44,11 @@ export class DashboardComponent implements OnInit {
   ];
   allChecked: boolean = false;
   clearList = [
-    { color: "#FF6384", number: 57 },
-    { color: "#36A2EB", number: 24 },
-    { color: "#FFCE56", number: 33 },
-    { color: '#00d9f9', number: 11 }, 
-    { color: '#a4c73c', number: 67 }
+    { name:'Karl', color: "#FF6384", number: 57 },
+    { name:'Layla', color: "#36A2EB", number: 24 },
+    { name:'Max', color: "#FFCE56", number: 33 },
+    { name:'Dodo', color: '#00d9f9', number: 11 }, 
+    { name:'Kero', color: '#a4c73c', number: 67 }
   ]
   
 
