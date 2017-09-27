@@ -117,7 +117,7 @@ export class DashboardComponent implements OnInit {
   }
 
   toggleAll(){
-    if( this.allChecked ){
+    if( !this.allChecked ){
       this.friendList.forEach( fr => fr.invited = true )
     } else {
       this.friendList.forEach( fr => fr.invited = false )

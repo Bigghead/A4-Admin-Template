@@ -140,7 +140,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
                 <p style="">
-                    <input type="checkbox" id="checkboxid" [(ngModel)]="allChecked" (click)="toggleAll()"><label for="checkboxid">Invite Everybody</label>
+                    <input type="checkbox" id="checkboxid" [(ngModel)]="allChecked" (click)="toggleAll()"><label for="checkboxid">{{ allChecked ? 'Remove Everybody' : 'Invite Everybody' }}</label>
                   </p> 
               </div>
               <table class="striped">
