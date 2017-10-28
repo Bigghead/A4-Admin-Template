@@ -177,11 +177,12 @@
        </div> 
 
        <div class="dash-flex-2"> 
-        <div class="card dash-weather row" style="margin-left: 0; margin-right: 0;">
+        <div class="card dash-weather" style="margin-left: 0; margin-right: 0;">
           <!--<div  > -->
-            <div data-toggle="datepicker" class="col m6 s12" style="margin: auto; background-color: white;"></div>
+              <jqxCalendar class="weather-box" [width]="250" [height]="220" #calendarReference></jqxCalendar>
+            
           <!--</div>-->
-          <div class="col m6 s12 weather-box" *ngIf="weatherData">
+          <div class="weather-box" *ngIf="weatherData">
             <!--<div><img src="{{ 'http://openweathermap.org/img/w/'+weatherData.weather[0].icon+'.png' }}" alt="weather" class="responsive-img" ></div>-->
             <div><h4>{{ weatherData.weather[0].main }}</h4></div>
             <div>
