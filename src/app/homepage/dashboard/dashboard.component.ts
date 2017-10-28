@@ -62,7 +62,6 @@ export class DashboardComponent implements OnInit {
      this.dashHelper.buildBarChart();
      this.dashHelper.buildDonut( this.donutChart );
      this.getWeather();
-    //  this.getMap();
   }
 
 

@@ -1,12 +1,11 @@
  <ul id="slide-out" class="side-nav fixed">
       <li style="height: 64px; background-color: #ef6b5d"></li>
-      <li><a href="#!">Dashboard</a></li>
-      <li><a href="#!">Mailbox</a></li>
-      <li><a href="#!">Gallery</a></li>      
+      <li><a routerLink="/admin-template/dashboard">Dashboard</a></li>
+      <li><a routerLink="/admin-template/mailbox">Mailbox</a></li>
+      <li><a routerLink="/admin-template/gallery">Gallery</a></li>      
 </ul>
 
 <main>
-   <!--<div class="navbar-fixed">-->
      <nav>
     <div class="nav-wrapper">
       <a style="margin-left: 15px;"href="#!" class="brand-logo"><i class="fa fa-code fa-lg"></i> Admin Template</a>
@@ -25,6 +24,5 @@
       </ul>
     </div>
   </nav>
-   <!--</div>-->
   <router-outlet></router-outlet>
 </main>

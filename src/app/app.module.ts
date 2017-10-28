@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './homepage/dashboard/dashboard.component';
 import { DashHelper } from './homepage/dashboard/dashboard-helper';
+import { GalleryComponent } from './homepage/gallery/gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     DashboardComponent,
-    jqxCalendarComponent
+    jqxCalendarComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
