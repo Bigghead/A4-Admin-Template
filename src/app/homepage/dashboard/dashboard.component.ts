@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { DashHelper } from './dashboard-helper';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { jqxCalendarComponent } from 'jqwidgets-framework/jqwidgets-ts/angular_jqxcalendar';
 import Chart from 'chart.js'; 
 import * as c3 from 'c3';
 import * as GMaps from 'gmaps';
