@@ -4,7 +4,32 @@ import Chart from 'chart.js'
 export class DashHelper {
 
     months = ['January', 'February', 'March', 'April', 'May', 'June', 
-              'July', 'August', 'September', 'October', 'November', 'December']
+              'July', 'August', 'September', 'October', 'November', 'December'];
+
+    socialLogin = [
+        { name: 'Twitter', class: 'fa fa-twitter fa-lg', checked: true },
+        { name: 'Facebook', class: 'fa fa-facebook fa-lg', checked: false },
+        { name: 'Google+', class: 'fa fa-google-plus fa-lg', checked: true },
+        { name: 'LinkedIn', class: 'fa fa-linkedin fa-lg', checked: true },
+        { name: 'Instagram', class: 'fa fa-instagram fa-lg', checked: false }
+    ];
+
+    friendList = [
+        { name : 'Hello 1', invited: true },
+        { name : 'Hello 2', invited: false },
+        { name : 'Hello 3', invited: false },
+        { name : 'Hello 4', invited: false },
+        { name : 'Hello 5', invited: true },
+        { name : 'Hello 6', invited: false }
+    ];
+
+    clearList = [
+        { name:'Karl', color: "#FF6384", number: 57 },
+        { name:'Layla', color: "#36A2EB", number: 24 },
+        { name:'Max', color: "#FFCE56", number: 33 },
+        { name:'Dodo', color: '#00d9f9', number: 11 }, 
+        { name:'Kero', color: '#a4c73c', number: 67 }
+    ]
 
 
 

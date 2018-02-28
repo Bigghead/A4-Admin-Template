@@ -5,15 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { DashboardComponent } from './homepage/dashboard/dashboard.component';
-import { DashHelper } from './homepage/dashboard/dashboard-helper';
-import { GalleryComponent } from './homepage/gallery/gallery.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashHelper } from './dashboard/dashboard-helper';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
     DashboardComponent,
     GalleryComponent
   ],
